@@ -1,0 +1,130 @@
+@import "util";
+@import "base";
+@import "impress";
+
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+    font-size: 48px;
+    line-height: 1.5;
+
+    h1, h2 {
+        text-shadow: 0 2px 2px rgba(0, 0, 0, .6);
+    }
+}
+
+.impress-enabled .step.past {
+    opacity: 0.4;
+}
+
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0;
+    .transition(~"opacity 1s");
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+.slide {
+    display: block;
+    width: 960px;
+    height: 700px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.2);
+    font-size: 30px;
+    line-height: 36px;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+
+    img {
+        max-width: 100%;
+    }
+
+    &.centered {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-box-pack: center;
+
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        -moz-box-pack: center;
+
+        display: box;
+        box-orient: vertical;
+        box-pack: center;
+    }
+
+    .slide-icon {
+        color: rgba(255,255,255,0.6);
+        position: absolute;
+        right: 0.25em;
+        bottom: 0.25em;
+    }
+
+    .CodeMirror {
+        height: auto;
+        max-height: 700px-40px;
+    }
+}
+
+@steps: `[1,2,3,4,5,6,7,8,9,10].map(function(s){return '.impress-supported .s'+s}).join(', ')`;
+(~'@{steps}'){
+    opacity: 0;
+    .transition(~"all 1s");
+}
+
+@steps-on: `[1,2,3,4,5,6,7,8,9,10].map(function(s){return '.impress-supported .step-'+s+' .s'+s}).join(', ')`;
+(~'@{steps-on}') {
+    opacity: 1;
+}
+
+.step.hero {
+  width: 1400px;
+  height: 900px;
+}
+
+body.impress-on-intro,
+body.impress-on-wc-intro,
+body.impress-on-sha-intro,
+body.impress-on-es6-intro {
+  background-image: url("../images/earth-horizon.jpg");
+}
+
+.js-logo:after {
+  content: "JS";
+}
+.js-logo {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-size: 2em;
+  display: inline-block;
+  border-radius: 10px;
+  line-height: 1em;
+  border: 10px #FFF solid;
+  margin: 10px;
+  padding-left: 0.5em;
+  padding-top: 0.6em;
+  padding-right: 0.1em;
+}
+
+.http-logo {
+  font-size: 3em;
+  display: inline-block;
+}
+
+#web3-intro {
+  .chart {
+    border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+body.impress-on-web3-web5 {
+  background-image: url("../images/terminator.jpg");
+}
