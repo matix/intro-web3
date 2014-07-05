@@ -37,6 +37,9 @@
 </div>
 
 <div id="impress">
+    <script>
+      SLIDE_PADDING = 200;
+    </script>
 
     <div id="intro" class="step hero" data-x="0" data-y="0">
         <h1>Entering the Web 3.0</h1>
@@ -57,12 +60,12 @@
         <div class="fa fa-user fa-4x slide-icon"></div>
     </div>
 
-    <div id="web3-intro" class="step slide" data-x="prev" data-y="prev+700+100">
+    <div id="web3-intro" class="step slide" data-x="prev" data-y="prev+700+SLIDE_PADDING">
       <h1>The Web is a living Standard...</h1>
       <img class="chart" height="450px" src="images/web-evolution-chart.jpg" alt="Web Evolution along the years.">
     </div>
 
-    <div id="web3-web1" class="step slide" data-x="prev+960+100" data-y="prev">
+    <div id="web3-web1" class="step slide" data-x="prev+960+SLIDE_PADDING" data-y="prev">
       <h1>The Web 1.0</h1>
       <br>
       <i class="fa fa-4x fa-file-code-o"></i>
@@ -73,7 +76,7 @@
       <h2>The Goal: World Wide Knowledge Share</h2>
     </div>
 
-    <div id="web3-web2" class="step slide" data-x="prev+960+100" data-y="prev">
+    <div id="web3-web2" class="step slide" data-x="prev+960+SLIDE_PADDING" data-y="prev">
       <h1>The Web 2.0</h1>
       <br>
       <i class="fa fa-4x fa-file-code-o"></i>
@@ -84,7 +87,7 @@
       <h2>The Goal: Wold Wide Communities</h2>
     </div>
 
-    <div id="web3-web3" class="step slide" data-x="prev+960+100" data-y="prev">
+    <div id="web3-web3" class="step slide" data-x="prev+960+SLIDE_PADDING" data-y="prev">
       <h1>The Web 3.0</h1>
       <br>
       <i class="fa fa-4x fa-file-code-o"></i>
@@ -95,7 +98,7 @@
       <h2>The Goal: Wold Wide Connected Agents</h2>
     </div>
 
-    <div id="web3-web4" class="step slide" data-x="prev+960+100" data-y="prev">
+    <div id="web3-web4" class="step slide" data-x="prev+960+SLIDE_PADDING" data-y="prev">
       <h1>The Web 4.0</h1>
       <br>
       <i class="fa fa-4x fa-file-code-o"></i>
@@ -106,7 +109,7 @@
       <h2>The Goal: Wold Wide Intelligent Agents</h2>
     </div>
 
-    <div id="web3-web5" class="step slide" data-x="prev+960+100" data-y="prev">
+    <div id="web3-web5" class="step slide" data-x="prev+960+SLIDE_PADDING" data-y="prev">
       <h1>The Web 5.0</h1>
       <br>
       <i class="fa fa-4x fa-file-code-o"></i>
@@ -117,7 +120,7 @@
       <h2>The Goal: Wold Wide Domination</h2>
     </div>
 
-    <div id="web3-whats-new" class="step slide centered" data-x="prev-960*2-100*2" data-y="prev+700+100" data-steps="2">
+    <div id="web3-whats-new" class="step slide centered" data-x="prev-960*2-SLIDE_PADDING*2" data-y="prev+700+SLIDE_PADDING" data-steps="2">
       <h1>So What's New?</h1>
       <p class="s1">
         <i class="fa fa-warning"></i> Disclaimer: The following technologies are mostly on draft and not ready
@@ -154,7 +157,7 @@
       });
     </script>
 
-    <div id="web3-new-overview" class="step slide centered" data-x="prev+960+100" data-y="prev">
+    <div id="web3-new-overview" class="step slide centered" data-x="prev+960+SLIDE_PADDING" data-y="prev">
       <i class="fa fa-4x fa-html5"></i>
       <h2>Web Components</h2>
       <br>
@@ -165,37 +168,37 @@
       <h2>Javascript ES6 (JS.next)</h2>
     </div>
 
-    <div id="wc-intro" class="step hero" data-x="prev+1400+100" data-y="prev">
+    <div id="wc-intro" class="step hero" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <br>
       <i class="fa pull-left fa-4x fa-html5"></i>
       <h1>Web Components</h1>
     </div>
 
-    <div id="wc-definition" class="step slide" data-x="prev+1400+100" data-y="prev">
+    <div id="wc-definition" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>Web Components</h1>
     </div>
 
-    <div id="sha-intro" class="step hero" data-x="prev" data-y="prev+700+100">
+    <div id="sha-intro" class="step hero" data-x="prev" data-y="prev+700+SLIDE_PADDING">
       <br>
       <i class="fa pull-left fa-4x fa-css3"></i>
       <h1>CSS Shaders</h1>
     </div>
 
-    <div id="sha-definition" class="step slide" data-x="prev+1400+100" data-y="prev">
+    <div id="sha-definition" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>CSS Shaders</h1>
     </div>
 
-    <div id="es6-intro" class="step hero" data-x="prev" data-y="prev+700+100">
+    <div id="es6-intro" class="step hero" data-x="prev" data-y="prev+700+SLIDE_PADDING">
       <br>
       <i class="fa js-logo pull-left"></i>
       <h1>&nbsp; Javascript ES6</h1>
     </div>
 
-    <div id="es6-topics" class="step slide" data-x="prev+1400+100" data-y="prev">
+    <div id="es6-topics" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>Ecmascript 6</h1>
     </div>
 
-    <div id="outro" class="step hero" data-x="prev+1400+100" data-y="prev">
+    <div id="outro" class="step hero" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>Thanks!</h1>
       <h2><a href="http://matix.github.com/intro-web3">matix.github.com/intro-web3</a></h2>
     </div>
