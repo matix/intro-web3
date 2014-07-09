@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         src: [
           'styles/main.css',
           'node_modules/codemirror/lib/codemirror.css',
-          'node_modules/codemirror/theme/neat.css'
+          'node_modules/codemirror/theme/monokai.css'
         ],
         dest: "styles/bundle.css"
       }
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
     watch: {
       "gruntfile": {
         files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
+        tasks: ['jshint:gruntfile', 'build']
       },
       "concat": {
         files: '<%= concat.source.src %>',

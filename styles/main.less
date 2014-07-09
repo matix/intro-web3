@@ -90,6 +90,12 @@
   height: 900px;
 }
 
+.CodeMirror {
+  display: inline-block;
+  border-radius: 6px;
+  background: fade(#272822, 40%) !important;
+}
+
 body.impress-on-intro,
 body.impress-on-wc-intro,
 body.impress-on-sha-intro,
@@ -138,5 +144,23 @@ body.impress-on-web3-web5 {
 #wc-definition {
   .std-list {
     text-align: center;
+  }
+}
+
+#wc-shadow-dom {
+  .player {
+    width: 640px;
+    height: 360px;
+    margin: 10px 150px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+  }
+  .instructions {
+    img {
+      vertical-align: middle;
+      display: inline-block;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+    }
   }
 }

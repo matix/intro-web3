@@ -192,6 +192,34 @@
     <div id="wc-shadow-dom" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>The Shadow DOM</h1>
       <i class="fa fa-sitemap fa-4x slide-icon"></i>
+      <video class="player" controls>
+        <source src="http://video.webmfiles.org/big-buck-bunny_trailer.webm">
+      </video>
+      <br>
+      <br>
+      <div class="instructions">
+        <p>Right Click <i class="fa fa-caret-right"></i> Inspect Element</p>
+        <p>Make sure: <img src="images/shadow-dom-check.png" alt="Check Shadow DOM on Developer Tools" height="40"></p>
+      </div>
+    </div>
+
+    <div id="wc-shadow-dom-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="3">
+      <i class="fa fa-sitemap fa-4x slide-icon"></i>
+      <h1>The Shadow DOM</h1>
+      <p>The Shadow DOM is a <strong>subtree</strong> that belongs to a complex element, and it's isolated
+      from the rest of the document.</p>
+      <br>
+      <p class="s1">Why is this important?</p>
+      <br>
+      <h2 class="s2"><i class="fa fa-lock s2"></i> Encapsulation</h2>
+      <textarea class="s3" data-codemirror="true" data-mode="css" data-read-only="true">
+        <style scoped>
+          button {
+            width: 30px;
+            height: 30px;
+          }
+        </style>
+      </textarea>
     </div>
 
     <div id="wc-templates" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">

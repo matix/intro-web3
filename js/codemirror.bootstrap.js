@@ -12,7 +12,7 @@
             var options = {};
             options.mode = element.dataset.mode || "htmlmixed";
             options.readOnly = element.dataset.readOnly == "true";
-            options.theme = "neat";
+            options.theme = "monokai";
             //options.lineNumbers = true;
 
             var editor;
@@ -30,7 +30,7 @@
                 element.innerHTML = "";
                 editor = CodeMirror(element, options);
             }
-            
+
             editors.push([element, editor]);
 
             var event = document.createEvent("CustomEvent");
