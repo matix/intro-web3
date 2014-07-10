@@ -212,7 +212,7 @@
       <p class="s1">Why is this important?</p>
       <br>
       <h2 class="s2"><i class="fa fa-lock s2"></i> Encapsulation</h2>
-      <textarea class="s3" data-codemirror="true" data-mode="css" data-read-only="true">
+      <textarea class="s3" data-codemirror="true" data-mode="htmlmixed" data-read-only="true">
         <style scoped>
           button {
             width: 30px;
@@ -222,14 +222,128 @@
       </textarea>
     </div>
 
-    <div id="wc-templates" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
-      <h1>Templates</h1>
+    <div id="wc-templates" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="7">
+      <h1>Templates Today</h1>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true">
+        <script type="text/x-template">
+          <h1>Hello World!</h1>
+          <p>Im a template</p>
+        </script>
+      </textarea>
+      <ul>
+        <li class="s1"><i class="fa fa-thumbs-up color-ok"></i> No dom creation.</li>
+        <li class="s2"><i class="fa fa-thumbs-down color-error"></i> Parsing still occurs.</li>
+        <li class="s3"><i class="fa fa-thumbs-down color-error"></i> Obscure to the browser.</li>
+      </ul>
+      <br>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="s4">
+        <script>
+          $.get("mytemplate.html");
+        </script>
+      </textarea>
+      <ul>
+        <li class="s5"><i class="fa fa-thumbs-up color-ok"></i> No retrieving or parsing.</li>
+        <li class="s6"><i class="fa fa-thumbs-down color-error"></i> Extra Request.</li>
+        <li class="s7"><i class="fa fa-thumbs-down color-error"></i> AJAX CORS Restrictions.</li>
+      </ul>
       <i class="fa fa-code fa-4x slide-icon"></i>
     </div>
 
+    <div id="wc-templates-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="4">
+      <h1>Templates</h1>
+      <i class="fa fa-code fa-4x slide-icon"></i>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true">
+        <template id="my-template">
+          <h1>Hello World!</h1>
+          <p>Im a template</p>
+        </template>
+      </textarea>
+      <ul>
+        <li class="s1"><i class="fa fa-thumbs-up color-ok"></i> No parsing.</li>
+        <li class="s2"><i class="fa fa-thumbs-up color-ok"></i> No Extra Request.</li>
+        <li class="s3"><i class="fa fa-thumbs-up color-ok"></i> Clear intentions to the browser.</li>
+      </ul>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true" class="s4">
+        var mytemplate =
+              document.getElementById("my-template");
+
+        document
+          .appendChild(
+            document.importNode(mytemplate.content, true)
+          );
+      </textarea>
+    </div>
+
     <div id="wc-custom-elements" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Widgets Today:</h1>
+      <i class="fa fa-cubes fa-4x slide-icon"></i>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <div class="slider" ng-controller="slider">
+          <ul class="slider-content">
+            <li class="slider-slide">
+              <img src="image-1.png" alt="Image 1">
+            </li>
+            <li class="slider-slide">
+              <img src="image-2.png" alt="Image 2">
+            </li>
+            ...
+          </ul>
+          <nav class="slider-nav">
+            <div class="slider-prev" ng-click="prev()">
+            </div>
+            <div class="slider-next" ng-click="next()">
+            </div>
+          </nav>
+        </div>
+      </textarea>
+    </div>
+
+    <div id="wc-custom-elements-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Widgets Today:</h1>
+      <i class="fa fa-cubes fa-4x slide-icon"></i>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <a href="https://twitter.com/share"
+           class="twitter-share-button"
+           data-url="http://matix.github.com/intro-web3"
+           data-via="matixfigueroa">Tweet</a>
+        <script src=//platform.twitter.com/widgets.js>
+        </script>
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <iframe
+          src="//www.facebook.com/plugins/like.php?href=..."
+          scrolling="no"
+          frameborder="0"
+          style="border:none; overflow:hidden; height:80px;"
+          allowTransparency="true">
+        </iframe>
+      </textarea>
+    </div>
+
+    <div id="wc-custom-elements-3" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>Custom Elements</h1>
       <i class="fa fa-cubes fa-4x slide-icon"></i>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <img-slider>
+          <img src="image-1.png" alt="Image 1">
+          <img src="image-2.png" alt="Image 2">
+          <img src="image-3.png" alt="Image 3">
+        </img-slider>
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <tweet
+          url="http://matix.github.com/intro-web3"
+          via="matixfigueroa">
+        </tweet>
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <like url="http://matix.github.com/intro-web3">
+        </like>
+      </textarea>
     </div>
 
     <div id="wc-meta-import" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
