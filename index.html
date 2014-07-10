@@ -480,7 +480,7 @@
       <ul class="std-list">
         <li class="s1">Function Shorthand</li>
         <li class="s1">Destructuring Assignment</li>
-        <li class="s1">String Templates</li>
+        <li class="s1">String Interpolation</li>
         <li class="s1">Generators and Iterators</li>
         <li class="s1">Classes</li>
         <li class="s1">Symbols</li>
@@ -579,6 +579,54 @@
         let {name: firstName, age = 20} = person;
         console.log(firstName); //Matias
         console.log(age); //20
+      </textarea>
+    </div>
+
+    <div id="es6-string-inter" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>String Interpolation</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        var name = person.name,
+            likes = person.likes;
+
+        var sentence = "Hi " + name
+                       + ", I see you like "
+                       + likes.join(",");
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        let {name, likes, greet} = person;
+
+        var sentence = `Hi ${name},
+                        I see you like ${likes.join(',')}`;
+        var sentence = `Hi ${person.name},
+                        I see you like ${likes.join(',')}`;
+        var sentence = `${greet()},
+                        I see you like ${likes.join(',')}`;
+      </textarea>
+    </div>
+
+    <div id="es6-string-inter-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>String Interpolation</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        let {name, surname, likes} = person;
+
+        var html = safehtml`
+          <h1>${name} ${surname}</h1>
+          <p>Likes: ${likes.toString()}</p>
+        `
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        var hi = l10n`Hi`;
+        console.log(`${hi} ${name}`); //Hola Matias
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        var qsa = ((s)=> document.querySelectorAll(s));
+
+        qsa`.person` // [<div class="person">]
       </textarea>
     </div>
 
