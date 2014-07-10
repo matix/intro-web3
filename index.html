@@ -123,7 +123,7 @@
     <div id="web3-whats-new" class="step slide centered" data-x="prev-960*2-SLIDE_PADDING*2" data-y="prev+700+SLIDE_PADDING" data-steps="2">
       <h1>So What's New?</h1>
       <p class="s1">
-        <i class="fa fa-warning"></i> Disclaimer: The following technologies are mostly on draft and not ready
+        <i class="fa fa-warning color-warning"></i> Disclaimer: The following technologies are mostly on draft and not ready
         for mainstream use yet.
       </p>
       <p class="s2">
@@ -455,8 +455,131 @@
       <h1>&nbsp; Javascript ES6</h1>
     </div>
 
-    <div id="es6-topics" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    <div id="es6-definition" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="5">
       <h1>Ecmascript 6</h1>
+      <p class="">New interation on the standard.</p>
+      <p class="s1">LOTS of new features.</p>
+      <p class="s2">OMG SO MANY NEW FEATURES!</p>
+      <br>
+      <p class="s3">Better for:</p>
+      <ul class="std-list">
+        <li class="s3"><i class="fa fa-2x fa-rocket"></i></li>
+        <li class="s3">Applications</li>
+        <li><br></li>
+        <li class="s4"><i class="fa fa-2x fa-cubes"></i></li>
+        <li class="s4">Libraries</li>
+        <li><br></li>
+        <li class="s5"><i class="fa fa-2x fa-gears"></i></li>
+        <li class="s5">Code Generators</li>
+      </ul>
+    </div>
+
+    <div id="es6-topics" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="2">
+      <h1>Ecmascript 6</h1>
+      <br>
+      <ul class="std-list">
+        <li class="s1">Function Shorthand</li>
+        <li class="s1">Destructuring Assignment</li>
+        <li class="s1">String Templates</li>
+        <li class="s1">Generators and Iterators</li>
+        <li class="s1">Classes</li>
+        <li class="s1">Symbols</li>
+        <li class="s1">Modules</li>
+        <li class="s2 color-disabled">Proxies</li>
+        <li class="s2 color-disabled">Weak Maps</li>
+        <li class="s2 color-disabled">Typed Arrays</li>
+        <li class="s2 color-disabled">Rest parameters</li>
+        <li class="s2 color-disabled">Default Parameters</li>
+        <li class="s2 color-disabled">... even more!</li>
+      </ul>
+    </div>
+
+    <div id="es6-func-shorthand" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Now</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        people.filter(function(e){
+                return e.age > 21;
+              })
+              .map(function(e){
+                return e.name:
+              })
+              .forEach(function(name, i){
+                function logName (){
+                  console.log(name);
+                }
+
+                $("#person"+i)
+                    .text(name)
+                    .click(logName);
+              });
+      </textarea>
+    </div>
+
+    <div id="es6-func-shorthand-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Function Shorthand</h1>
+      <div class="js-logo slide-icon"></div>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        people.filter((e) => e.age > 21)
+              .map((e) => e.name)
+              .forEach((name, i) => {
+                var logName = (=>console.log(name));
+
+                $("#person"+i)
+                  .text(name)
+                  .click(logName);
+              });
+      </textarea>
+    </div>
+
+    <div id="es6-dest-assgin" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>D. Assignment</h1>
+      <div class="js-logo slide-icon"></div>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        var person = {
+          name: "Matias",
+          surname: "Figueroa",
+          likes: [
+            "music", "code", "es6"
+          ],
+          greet: function() { console.log("Hi ", this.name)}
+        }
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        let {name, likes, greet} = person;
+
+        console.log(name) //Matias
+        console.log(likes[0]) //music
+        console.log(greet()) //Hi Matias
+      </textarea>
+    </div>
+
+    <div id="es6-dest-assgin-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>D. Assignment</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        let {name, likes, greet} = person;
+
+        let [first, second, third] = likes;
+        console.log(first); //music
+        console.log(second); //code
+        console.log(third); //es6
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        let [head, ...tail] = likes;
+        console.log(head) //music
+        console.log(tail) //["code", "es6"]
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        let {name: firstName, age = 20} = person;
+        console.log(firstName); //Matias
+        console.log(age); //20
+      </textarea>
     </div>
 
     <div id="outro" class="step hero" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
