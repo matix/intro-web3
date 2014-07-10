@@ -185,7 +185,7 @@
         <li class="s3">+</li>
         <li class="s3"><i class="fa fa-cubes"></i> <br>Custom Elements</li>
         <li class="s4">+</li>
-        <li class="s4"><i class="fa fa-folder-open"></i> <br>Meta Import</li>
+        <li class="s4"><i class="fa fa-folder-open"></i> <br>HTML Import</li>
       </ul>
     </div>
 
@@ -232,7 +232,7 @@
       </textarea>
       <ul>
         <li class="s1"><i class="fa fa-thumbs-up color-ok"></i> No dom creation.</li>
-        <li class="s2"><i class="fa fa-thumbs-down color-error"></i> Parsing still occurs.</li>
+        <li class="s2"><i class="fa fa-thumbs-down color-error"></i> No pre-parsing or validation.</li>
         <li class="s3"><i class="fa fa-thumbs-down color-error"></i> Obscure to the browser.</li>
       </ul>
       <br>
@@ -242,7 +242,7 @@
         </script>
       </textarea>
       <ul>
-        <li class="s5"><i class="fa fa-thumbs-up color-ok"></i> No retrieving or parsing.</li>
+        <li class="s5"><i class="fa fa-thumbs-up color-ok"></i> No retrieving or pre-parsing.</li>
         <li class="s6"><i class="fa fa-thumbs-down color-error"></i> Extra Request.</li>
         <li class="s7"><i class="fa fa-thumbs-down color-error"></i> AJAX CORS Restrictions.</li>
       </ul>
@@ -259,7 +259,7 @@
         </template>
       </textarea>
       <ul>
-        <li class="s1"><i class="fa fa-thumbs-up color-ok"></i> No parsing.</li>
+        <li class="s1"><i class="fa fa-thumbs-up color-ok"></i> Parsing.</li>
         <li class="s2"><i class="fa fa-thumbs-up color-ok"></i> No Extra Request.</li>
         <li class="s3"><i class="fa fa-thumbs-up color-ok"></i> Clear intentions to the browser.</li>
       </ul>
@@ -268,10 +268,9 @@
         var mytemplate =
               document.getElementById("my-template");
 
-        document
-          .appendChild(
-            document.importNode(mytemplate.content, true)
-          );
+        document.appendChild(
+          mytemplate.content.clone(true)
+        );
       </textarea>
     </div>
 
@@ -346,13 +345,96 @@
       </textarea>
     </div>
 
-    <div id="wc-meta-import" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
-      <h1>Meta Import</h1>
+    <div id="wc-we-can-do-it" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    </div>
+
+    <div id="wc-custom-elements-4" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <i class="fa fa-cubes fa-4x slide-icon"></i>
+      <p>img-slider.html</p>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <template id="template">
+          <!-- Markup for the slider -->
+        </template>
+
+        <script>
+          var tmpl = document.getElementById('template');
+
+          var ImgSliderProto =
+                   Object.create(HTMLElement.prototype);
+
+          ImgSliderProto.createdCallback = function() {
+            var root = this.createShadowRoot();
+            root.appendChild(
+              document.importNode(tmpl.content, true);
+            );
+          };
+
+          var ImgSlider = document.register('img-slider', {
+            prototype: ImgSliderProto
+          });
+        </script>
+      </textarea>
+    </div>
+
+    <div id="wc-meta-import" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="1">
+      <h1>HTML Import</h1>
       <i class="fa fa-folder-open fa-4x slide-icon"></i>
+
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <link rel="import" href="img-slider.html">
+
+        <img-slider>
+         ...
+        </img-slider>
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="s1">
+        <link rel="import"
+              href="//facebook.com/webcomponents/like.html">
+
+        <like url="http://matix.github.com/intro-web3">
+        </like>
+      </textarea>
+    </div>
+
+    <div id="wc-polymer" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <i class="fa fa-cubes fa-4x slide-icon"></i>
+      <h1>Polymer: </h1>
+      <p>my-element.html</p>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <script src="../platform/platform.js"></script>
+        <link rel="import"
+              href="../polymer/polymer.html">
+        <polymer-element name="my-element"
+                         attributes="name">
+          <template>
+            <span>Hello <b>{{name}}</b>.</span>
+          </template>
+        </polymer-element>
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="htmlmixed" data-read-only="true" class="">
+        <script src="../polymer/polymer.js"></script>
+        <link rel="import" href="my-element">
+
+        <my-element name="Matias"></my-element>
+      </textarea>
     </div>
 
     <div id="wc-play" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <i class="fa fa-4x fa-paper-plane slide-icon"></i>
       <h1>Play:</h1>
+      <h2>Articles</h2>
+      <a href="http://www.w3.org/TR/components-intro/">[W3C] Introduction to Web Components</a><br>
+      <a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">[H5R] Custom Elements</a><br>
+      <a href="http://css-tricks.com/modular-future-web-components/">[CSST] A Guide to Web Components</a>
+      <h2>Can I use?</h2>
+      <a href="http://caniuse.com/#feat=shadowdom">Shadow DOM</a><br>
+      <a href="http://caniuse.com/#feat=template">Templates</a>
+      <h2>Polymer</h2>
+      <a href="http://www.polymer-project.org">polymer-project.org</a>
+      <h2>Examples</h2>
+      <a href="http://customelements.io">customelements.io</a>
     </div>
 
     <div id="sha-intro" class="step hero" data-x="prev" data-y="prev+700+SLIDE_PADDING">
