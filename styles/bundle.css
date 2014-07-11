@@ -1,0 +1,716 @@
+.color-ok {
+  color: green;
+}
+.color-error {
+  color: red;
+}
+.color-warning {
+  color: yellow;
+}
+.color-disabled {
+  color: rgba(255, 255, 255, 0.6);
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  font-family: 'Montserrat', Helvetica, serif;
+  min-height: 740px;
+  background-color: #0f0f0f;
+  background-image: url("../images/earth-horizon-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  -webkit-transition: 2s background;
+  -moz-transition: 2s background;
+  -ms-transition: 2s background;
+  -o-transition: 2s background;
+  transition: 2s background;
+}
+body.impress-supported {
+  background-repeat: no-repeat;
+}
+b,
+strong {
+  font-weight: bold;
+}
+i,
+em {
+  font-style: italic;
+}
+.fa {
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+h2 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  padding: 0 0.1em;
+  border-radius: 0.1em;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+a:hover,
+a:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.fallback-message {
+  font-family: sans-serif;
+  line-height: 1.3;
+  width: 780px;
+  padding: 10px 10px 0;
+  margin: 20px auto;
+  border: 1px solid #E4C652;
+  border-radius: 10px;
+  background: #EEDC94;
+}
+.fallback-message p {
+  margin-bottom: 10px;
+}
+.impress-supported .fallback-message {
+  display: none;
+}
+#overview {
+  display: none;
+}
+.impress-on-overview .step {
+  opacity: 1;
+  cursor: pointer;
+}
+.hint {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #EEE;
+  text-align: center;
+  font-size: 50px;
+  padding: 20px;
+  z-index: 100;
+  opacity: 0;
+  -webkit-transform: translateY(400px);
+  -moz-transform: translateY(400px);
+  -ms-transform: translateY(400px);
+  -o-transform: translateY(400px);
+  transform: translateY(400px);
+  -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+  -moz-transition: opacity 1s, -moz-transform 0.5s 1s;
+  -ms-transition: opacity 1s, -ms-transform 0.5s 1s;
+  -o-transition: opacity 1s, -o-transform 0.5s 1s;
+  transition: opacity 1s,         transform 0.5s 1s;
+}
+.impress-enabled .hint {
+  display: block;
+}
+.impress-on-bored .hint {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+  -moz-transition: opacity 1s 5s, -moz-transform 0.5s 4.5s;
+  -ms-transition: opacity 1s 5s, -ms-transform 0.5s 4.5s;
+  -o-transition: opacity 1s 5s, -o-transform 0.5s 4.5s;
+  transition: opacity 1s 5s,         transform 0.5s 4.5s;
+}
+.impress-enabled {
+  pointer-events: none;
+}
+.impress-enabled #impress {
+  pointer-events: auto;
+}
+.step {
+  position: relative;
+  width: 900px;
+  padding: 40px;
+  margin: 20px auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 48px;
+  line-height: 1.5;
+}
+.step h1,
+.step h2 {
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+.impress-enabled .step.past {
+  opacity: 0.4;
+}
+.impress-enabled .step {
+  margin: 0;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.impress-enabled .step.active {
+  opacity: 1;
+}
+.slide {
+  display: block;
+  width: 960px;
+  height: 700px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 30px;
+  line-height: 36px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+}
+.slide img {
+  max-width: 100%;
+}
+.slide.centered {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-pack: center;
+  display: box;
+  box-orient: vertical;
+  box-pack: center;
+}
+.slide .slide-icon {
+  color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  right: 0.25em;
+  bottom: 0.25em;
+}
+.slide .CodeMirror {
+  height: auto;
+  max-height: 660px;
+}
+.impress-supported .s1, .impress-supported .s2, .impress-supported .s3, .impress-supported .s4, .impress-supported .s5, .impress-supported .s6, .impress-supported .s7, .impress-supported .s8, .impress-supported .s9, .impress-supported .s10 {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.impress-supported .step-1 .s1, .impress-supported .step-2 .s2, .impress-supported .step-3 .s3, .impress-supported .step-4 .s4, .impress-supported .step-5 .s5, .impress-supported .step-6 .s6, .impress-supported .step-7 .s7, .impress-supported .step-8 .s8, .impress-supported .step-9 .s9, .impress-supported .step-10 .s10 {
+  opacity: 1;
+}
+.step.hero {
+  width: 1400px;
+  height: 900px;
+}
+.CodeMirror {
+  width: 100%;
+  border-radius: 6px;
+  background: rgba(39, 40, 34, 0.6) !important;
+}
+.CodeMirror .CodeMirror-code .cm-comment {
+  color: #BEBEBE;
+}
+.std-list {
+  text-align: center;
+}
+body.impress-on-intro,
+body.impress-on-wc-intro,
+body.impress-on-sha-intro,
+body.impress-on-es6-intro {
+  background-image: url("../images/earth-horizon.jpg");
+}
+.js-logo:after {
+  content: "JS";
+}
+.js-logo {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-size: 2em;
+  display: inline-block;
+  border-radius: 10px;
+  line-height: 1em;
+  border: 10px #FFF solid;
+  margin: 10px;
+  padding-left: 0.5em;
+  padding-top: 0.6em;
+  padding-right: 0.1em;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+.js-logo.slide-icon {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.http-logo {
+  font-size: 3em;
+  display: inline-block;
+}
+#web3-intro .chart {
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+}
+body.impress-on-web3-web5 {
+  background-image: url("../images/terminator.jpg");
+}
+#web3-new-overview {
+  text-align: center;
+}
+#wc-shadow-dom .player {
+  width: 640px;
+  height: 360px;
+  margin: 10px 150px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+#wc-shadow-dom .instructions img {
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+#wc-we-can-do-it {
+  position: relative;
+}
+#wc-we-can-do-it img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#wc-we-can-do-it p {
+  position: absolute;
+  font-size: 2em;
+  color: #000;
+  right: 0.2em;
+  bottom: 0.5em;
+}
+#http2 img {
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+#sha-definition .img-filters {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 300px;
+}
+#sha-definition-2 .definition {
+  position: absolute;
+  top: 350px;
+  right: 10px;
+  left: 0;
+}
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+}
+.CodeMirror-scroll {
+  /* Set scrolling behaviour here */
+  overflow: auto;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+}
+
+/* CURSOR */
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black;
+  z-index: 3;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7;
+  z-index: 1;
+}
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror div.CodeMirror-cursor.CodeMirror-overwrite {}
+
+.cm-tab { display: inline-block; }
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable {color: black;}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3 {color: #085;}
+.cm-s-default .cm-property {color: black;}
+.cm-s-default .cm-operator {color: black;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-error {color: #f00;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+
+.cm-invalidchar {color: #f00;}
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  color: black;
+}
+
+.CodeMirror-scroll {
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px; margin-right: -30px;
+  padding-bottom: 30px; padding-right: 30px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+}
+.CodeMirror-sizer {
+  position: relative;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actuall scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0; bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  padding-bottom: 30px;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  padding-bottom: 30px;
+  margin-bottom: -32px;
+  display: inline-block;
+  /* Hack to make IE7 behave */
+  *zoom:1;
+  *display:inline;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+
+.CodeMirror-lines {
+  cursor: text;
+}
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+.CodeMirror-widget {
+  display: inline-block;
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%; height: 0px;
+  overflow: hidden;
+  visibility: hidden;
+}
+.CodeMirror-measure pre { position: static; }
+
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute;
+  visibility: hidden;
+  border-right: none;
+  width: 0;
+}
+.CodeMirror-focused div.CodeMirror-cursor {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, .4);
+}
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+.CodeMirror span { *vertical-align: text-bottom; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursor {
+    visibility: hidden;
+  }
+}
+
+.cm-s-monokai.CodeMirror {background: #272822; color: #f8f8f2;}
+.cm-s-monokai div.CodeMirror-selected {background: #49483E !important;}
+.cm-s-monokai .CodeMirror-gutters {background: #272822; border-right: 0px;}
+.cm-s-monokai .CodeMirror-linenumber {color: #d0d0d0;}
+.cm-s-monokai .CodeMirror-cursor {border-left: 1px solid #f8f8f0 !important;}
+
+.cm-s-monokai span.cm-comment {color: #75715e;}
+.cm-s-monokai span.cm-atom {color: #ae81ff;}
+.cm-s-monokai span.cm-number {color: #ae81ff;}
+
+.cm-s-monokai span.cm-property, .cm-s-monokai span.cm-attribute {color: #a6e22e;}
+.cm-s-monokai span.cm-keyword {color: #f92672;}
+.cm-s-monokai span.cm-string {color: #e6db74;}
+
+.cm-s-monokai span.cm-variable {color: #a6e22e;}
+.cm-s-monokai span.cm-variable-2 {color: #9effff;}
+.cm-s-monokai span.cm-def {color: #fd971f;}
+.cm-s-monokai span.cm-error {background: #f92672; color: #f8f8f0;}
+.cm-s-monokai span.cm-bracket {color: #f8f8f2;}
+.cm-s-monokai span.cm-tag {color: #f92672;}
+.cm-s-monokai span.cm-link {color: #ae81ff;}
+
+.cm-s-monokai .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
