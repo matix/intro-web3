@@ -724,6 +724,142 @@
       </textarea>
     </div>
 
+    <div id="es6-symbols" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Now</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        function Person(name) {
+          // public
+          this.name = name;
+
+          // Effectively private
+          var cantTouchThis = "Suck it!";
+
+          // Sensitive internal data
+          // that needs to be shared.
+          // Conventionally private
+          this._dontTouchThis = seriouslyDont();
+        }
+
+        // Later, on a Friday 17:59
+        person._dontTouchThis = "LOLOLOLOLOLOLOLOLOL";
+
+        // Ship IT!
+      </textarea>
+    </div>
+
+    <div id="es6-symbols-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Symbols</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        private @secret_property;
+
+        function Person(name) {
+          // public
+          this.name = name;
+
+          // private
+          this[@secret_property] = secret();
+        }
+
+        function tellMeTheSecret(person){
+          return person[@secret_property];
+        }
+      </textarea>
+    </div>
+
+    <div id="es6-modules" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Now: CommonJS</h1>
+      <div class="js-logo slide-icon"></div>
+      <p>point.js</p>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        module.exports = Point;
+      </textarea>
+      <br>
+      <p>myapp.js</p>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        var Point = require("point");
+        var origin = new Point(0, 0);
+
+        console.log(origin);
+      </textarea>
+    </div>
+
+    <div id="es6-modules-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Now: AMD</h1>
+      <div class="js-logo slide-icon"></div>
+      <p>point.js</p>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        define("point", function() {
+            function Point(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            return Point;
+        });
+      </textarea>
+      <br>
+      <p>myapp.js</p>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        define("myapp", ["point"], function(Point) {
+            var origin = new Point(0, 0);
+            console.log(origin);
+        });
+      </textarea>
+    </div>
+
+    <div id="es6-modules-3" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>ES6 Modules</h1>
+      <div class="js-logo slide-icon"></div>
+      <p>point.js</p>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        module "point" {
+            export class Point {...}
+            export function distance(p1,p2){...}
+            export @point_secret
+            export points = [...]
+        }
+      </textarea>
+      <br>
+      <p>myapp.js</p>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        import {Point, distance} from "/point.js";
+
+        var origin = new Point(0, 0);
+        console.log(origin);
+      </textarea>
+    </div>
+
+    <div id="es6-outro" class="step slide centered" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <ul class="std-list">
+        <li><i class="fa js-logo" style="font-size:4em"></i></li>
+        <li><h1>Javascript ES6</h1></li>
+        <li>Toy Language: No more.</li>
+      </ul>
+    </div>
+
+    <div id="es6-play" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <i class="fa fa-4x fa-paper-plane slide-icon"></i>
+      <h1>Play:</h1>
+      <h2>Articles</h2>
+      <a href="http://code.tutsplus.com/tutorials/eight-cool-features-coming-in-es6--net-33175">[T+] Eight Cool Features Coming in ES6</a><br>
+      <a href="http://brendaneich.github.io/Strange-Loop-2012">[BE][Slides] The State of JavaScript</a><br>
+      <a href="http://wiki.ecmascript.org/doku.php?id=harmony:harmony">[ES] Ecmascript Harmony Wiki</a>
+      <h2>Can I use?</h2>
+      <a href="http://kangax.github.io/compat-table/es6/">ECMAScript 6 Compatibility Table</a>
+      <h2>On Node</h2>
+      <textarea data-codemirror="true" data-mode="bash" data-read-only="true">
+        $> node --harmony my-es6-enabled-script.js
+      </textarea>
+      <h2>On Chrome</h2>
+      <a href="chrome://flags/#enable-javascript-harmony">chrome://flags/#enable-javascript-harmony</a>
+    </div>
+
     <div id="outro" class="step hero" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>Thanks!</h1>
       <h2><a href="http://matix.github.com/intro-web3">matix.github.com/intro-web3</a></h2>
