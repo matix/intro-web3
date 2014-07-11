@@ -446,7 +446,162 @@
     </div>
 
     <div id="sha-definition" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
-      <h1>CSS Shaders</h1>
+      <h1>CSS Filters</h1>
+      <i class="fa fa-4x fa-css3 slide-icon"></i>
+      <textarea data-codemirror="true" data-mode="css" data-read-only="true" class="">
+        .image-1 {
+          filter: blur(5, 5);
+        }
+        ...
+        .image-4 {
+          filter: saturate(5);
+        }
+        .image-5 {
+          filter: invert(1);
+        }
+        .image-6 {
+          filter: grayscale(1);
+        }
+        ...
+        .image-9 {
+          filter: sepia(0.5);
+        }
+      </textarea>
+      <img class="img-filters" src="images/css-filters.png" alt="CSS Filters">
+    </div>
+
+    <div id="sha-definition-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="1">
+      <h1>Shaders</h1>
+      <i class="fa fa-4x fa-css3 slide-icon"></i>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.js" type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript" charset="utf-8">
+        var slide = document.getElementById("sha-definition-2");
+        var scene = new THREE.Scene();
+  			var camera = new THREE.PerspectiveCamera(75, 920/550, 1, 100);
+
+  			var renderer = new THREE.WebGLRenderer();
+  			renderer.setSize(920, 550);
+  			slide.appendChild(renderer.domElement);
+
+  			var geometry = new THREE.CubeGeometry(3,3,3);
+  			var material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true, wireframe_linewidth: 10 });
+  			var cube = new THREE.Mesh(geometry, material);
+  			scene.add(cube);
+
+  			camera.position.z = 5;
+
+        var play = false;
+  			var render = function () {
+  				requestAnimationFrame(render);
+          if(!play) return;
+
+  				cube.rotation.x += 0.01;
+  				cube.rotation.y += 0.01;
+
+  				renderer.render(scene, camera);
+  			};
+        render();
+
+        slide.addEventListener("impress:stepenter", function() {
+          play = true;
+        })
+        slide.addEventListener("impress:stepleave", function() {
+          play = false;
+        })
+      </script>
+      <div class="definition s1">
+        <center>
+          <p>A <strong>Shader</strong> is a small program that runs directly onthe GPU.</p>
+          <p>It usually performs 2 types of tasks:</p>
+          <p>Arrange vertices of a geometry [Vertex Shader]</p>
+          <p>Arrange Pixels on a texture [Fragment Shader]</p>
+        </center>
+      </div>
+    </div>
+
+    <div id="sha-fragment" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="2">
+      <i class="fa fa-4x fa-css3 slide-icon"></i>
+      <textarea data-codemirror="true" data-mode="glsl" data-read-only="true">
+        .image {
+          filter: grayscale(1);
+        }
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="glsl" data-read-only="true" class="s1">
+        .image {
+          filter: custom(none url(shaders/grayscale.fs), amount 1;
+        }
+      </textarea>
+      <br>
+      <p class="s2">grayscale.fs</p>
+      <textarea data-codemirror="true" data-mode="glsl" data-read-only="true" class="s2">
+        void main()
+        {
+          // Convert to grayscale using NTSC conversion weights
+          float gray = dot(gl_Color.rgb,
+                vec3(0.299 * amount, 0.587 * amount, 0.114 * amount));
+
+          gl_FragColor = vec4(gray, gray, gray, gl_Color.a);
+        }
+      </textarea>
+    </div>
+
+    <div id="sha-vertex" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev" data-steps="2">
+      <i class="fa fa-4x fa-css3 slide-icon"></i>
+      <textarea data-codemirror="true" data-mode="glsl" data-read-only="true">
+        .image {
+          transform: rotate(45deg);
+        }
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="glsl" data-read-only="true" class="s1">
+        .image {
+          filter: custom(url(shaders/rotate.vs), none), angle 45;
+        }
+      </textarea>
+      <br>
+      <p class="s2">rotate.vs</p>
+      <textarea data-codemirror="true" data-mode="glsl" data-read-only="true" class="s2">
+        void main(){
+          float PI = 3.14159265358979323846264;
+          float rad_angle = angle*PI/180.0;
+
+          vec4 a = gl_Vertex; vec4 b = a;
+          b.x = a.x*cos(rad_angle) - a.y*sin(rad_angle);
+          b.y = a.y*cos(rad_angle) + a.x*sin(rad_angle);
+          gl_Position = gl_ModelViewProjectionMatrix*b;
+        }
+      </textarea>
+    </div>
+
+    <div id="sha-example" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    <i class="fa fa-4x fa-css3 slide-icon"></i>
+    <h1>The Real Power:</h1>
+    <center>
+      <iframe title="AdobeTV Video Player" class="LayoutImage"
+              width="920"
+              height="550"
+              src="http://tv.adobe.com/embed/831/14234/autoplay/"
+              frameborder="0"
+              allowfullscreen="allowfullscreen"
+              scrolling="no">
+      </iframe>
+    </center>
+    </div>
+
+    <div id="sha-example-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    <i class="fa fa-4x fa-css3 slide-icon"></i>
+    <h1>The Real Power:</h1>
+    <center>
+      <iframe title="AdobeTV Video Player" class="LayoutImage"
+              width="920"
+              height="550"
+              src="http://tv.adobe.com/embed/831/14231/autoplay/"
+              frameborder="0"
+              allowfullscreen="allowfullscreen"
+              scrolling="no">
+      </iframe>
+    </center>
     </div>
 
     <div id="es6-intro" class="step hero" data-x="prev" data-y="prev+700+SLIDE_PADDING">
