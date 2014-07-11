@@ -533,7 +533,7 @@
       </textarea>
     </div>
 
-    <div id="es6-dest-assgin" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    <div id="es6-dest-assign" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>D. Assignment</h1>
       <div class="js-logo slide-icon"></div>
       <br>
@@ -557,7 +557,7 @@
       </textarea>
     </div>
 
-    <div id="es6-dest-assgin-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    <div id="es6-dest-assign-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>D. Assignment</h1>
       <div class="js-logo slide-icon"></div>
       <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
@@ -582,7 +582,7 @@
       </textarea>
     </div>
 
-    <div id="es6-string-inter" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    <div id="es6-string-interpolation" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>String Interpolation</h1>
       <div class="js-logo slide-icon"></div>
       <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
@@ -606,7 +606,7 @@
       </textarea>
     </div>
 
-    <div id="es6-string-inter-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+    <div id="es6-string-interpolation-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
       <h1>String Interpolation</h1>
       <div class="js-logo slide-icon"></div>
       <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
@@ -627,6 +627,100 @@
         var qsa = ((s)=> document.querySelectorAll(s));
 
         qsa`.person` // [<div class="person">]
+      </textarea>
+    </div>
+
+    <div id="es6-generators" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Now</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        function fibonacci(beforeNumber) {
+          var result = [0, 1];
+          while (result[result.length-1] &lt; beforeNumber) {
+            result[result.length] =
+                result[result.length-1]
+                + result[result.length-2];
+          }
+          return result ;
+        }
+
+        var fib = fibonacci(10000);
+
+        for(var i=0; i&lt;fib.length; i++){
+          console.log(fib[i]);
+        }
+      </textarea>
+    </div>
+
+    <div id="es6-generators-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Generators</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        function* fibonacci() {
+          let [ current, next ] = [ 0, 1 ];
+          while (true) {
+            [ current, next ] = [ next, current + next ];
+            yeld current;
+          }
+        }
+      </textarea>
+      <h2>Iterators</h2>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        var fib = fibonacci();
+        console.log(fib.next()); // 1
+        console.log(fib.next()); // 2
+        for (var n of fib) {
+          if (v >= 10000) break;
+          console.log(n); // 3, 5, 8 ...
+        }
+      </textarea>
+    </div>
+
+    <div id="es6-classes" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Now</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        function Person(name) {
+          this.name = name;
+        }
+
+        Person.prototype.greet = function(){
+          console.log("Hi my name is ", this.name);
+        }
+
+        function Employee(name, id) {
+          Person.call(this, name);
+          this.id = id;
+        }
+        Employee.prototype = Object.create(Person.prototype);
+
+        Employee.prototype.greet = function(){
+          console.log(this.name,"id:",this.id);
+        }
+      </textarea>
+    </div>
+
+    <div id="es6-classes-2" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <h1>Classes (Syntax)</h1>
+      <div class="js-logo slide-icon"></div>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        class Person {
+          constructor(name) {
+            this.name = name;
+          }
+          greet(){
+            console.log("Hi my name is ", this.name);
+          }
+        }
+        class Employee extends Person {
+          constructor(name, id) {
+            super(name);
+            this.id = id;
+          }
+          greet(){
+            console.log(this.name,"id:",this.id);
+          }
+        }
       </textarea>
     </div>
 
