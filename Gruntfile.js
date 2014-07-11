@@ -103,10 +103,11 @@ module.exports = function(grunt) {
         src: [
           "images/*.*",
           "node_modules/font-awesome/css/**.*",
-          "node_modules/font-awesome/font/**.*",
+          "node_modules/font-awesome/fonts/**.*",
           "styles/bundle.css",
           "js/bundle.js",
-          "demos/**/**.*",
+          "favicon.png",
+          "apple-touch-icon.png",
           "index.html",
           "README.md"
         ]
