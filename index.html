@@ -479,7 +479,7 @@
         var scene = new THREE.Scene();
   			var camera = new THREE.PerspectiveCamera(75, 920/550, 1, 100);
 
-  			var renderer = new THREE.WebGLRenderer();
+  			var renderer = new THREE.WebGLRenderer({alpha:true});
   			renderer.setSize(920, 550);
   			slide.appendChild(renderer.domElement);
 
@@ -1060,6 +1060,53 @@
         <i class="fa js-logo"></i> &nbsp;
         <h1>Not just a browsers game anymore</h1>
       </center>
+    </div>
+
+    <div id="phonegap" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <img src="images/phonegap-logo.png" class="slide-icon" alt="PhoneGap Logo" width="200">
+      <h1>PhoneGap</h1>
+      <p>Build with HTML/CSS/JS, Pack for Mobile.</p>
+      <p><a href="http://phonegap.com/">phonegap.com</a></p>
+      <br>
+      <textarea data-codemirror="true" data-mode="bash" data-read-only="true">
+        $> npm install -g cordova
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="bash" data-read-only="true">
+        $> cordova create myapp com.example.app MyApp
+        $> cordova platform add ios
+        $> cordova platform add android
+
+        $> cordova plugin add org.apache.cordova.camera
+        $> cordova plugin add org.apache.cordova.geolocation
+
+        $> vim www/index.html
+
+        $> cordova build
+      </textarea>
+    </div>
+
+    <div id="nodewebkit" class="step slide" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
+      <img src="images/node-webkit-logo.png" class="slide-icon" alt="PhoneGap Logo" width="200">
+      <h1>Node Webkit</h1>
+      <p>Build with HTML/CSS/JS &amp; Node, Pack for Desktop.</p>
+      <p><a href="https://github.com/rogerwang/node-webkit">github.com/rogerwang/node-webkit</a></p>
+      <br>
+      <p><a href="https://github.com/rogerwang/node-webkit#downloads"><i class="fa fa-download"></i> Download from: Github</a></p>
+      <br>
+      <p>package.json</p>
+      <textarea data-codemirror="true" data-mode="javascript" data-read-only="true">
+        {
+          "name": "my-app",
+          "main": "index.html"
+        }
+      </textarea>
+      <br>
+      <textarea data-codemirror="true" data-mode="bash" data-read-only="true">
+        $> zip app.nw index.html package.json
+        $> cat ./nw app.nw > my-app.app
+        $> cat ./nw.exe app.nw > my-app.exe
+      </textarea>
     </div>
 
     <div id="outro" class="step hero" data-x="prev+1400+SLIDE_PADDING" data-y="prev">
